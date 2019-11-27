@@ -1,4 +1,4 @@
-$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("src/test/resources/features/login/Login.feature");
+$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("src\\test\\resources\\features\\login\\Login.feature");
 formatter.feature({
   "name": "Login",
   "description": "  As user I want to login under different roles",
@@ -8,24 +8,6 @@ formatter.feature({
       "name": "@VYT-4121"
     }
   ]
-});
-formatter.background({
-  "name": "",
-  "description": "",
-  "keyword": "Background"
-});
-formatter.before({
-  "status": "passed"
-});
-formatter.step({
-  "name": "user is on the landing page",
-  "keyword": "Given "
-});
-formatter.match({
-  "location": "LoginStepDefinitions.user_is_on_the_landing_page()"
-});
-formatter.result({
-  "status": "passed"
 });
 formatter.scenario({
   "name": "Login as a store manager",
@@ -39,6 +21,9 @@ formatter.scenario({
       "name": "@storemanager"
     }
   ]
+});
+formatter.before({
+  "status": "passed"
 });
 formatter.step({
   "name": "user logs in as a store manager",
@@ -56,6 +41,45 @@ formatter.step({
 });
 formatter.match({
   "location": "LoginStepDefinitions.user_verifies_that_page_name_is_displayed(String)"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.after({
+  "status": "passed"
+});
+formatter.scenario({
+  "name": "Verify warning message for invalid credentials",
+  "description": "",
+  "keyword": "Scenario",
+  "tags": [
+    {
+      "name": "@VYT-4121"
+    },
+    {
+      "name": "@negative"
+    }
+  ]
+});
+formatter.before({
+  "status": "passed"
+});
+formatter.step({
+  "name": "user logs in with \"wrong\" username and \"wrong\" password",
+  "keyword": "Then "
+});
+formatter.match({
+  "location": "LoginStepDefinitions.user_logs_in_with_username_and_password(String,String)"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "user verifies that \"Invalid user name or password.\" warning message is displayed",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "LoginStepDefinitions.user_verifies_that_warning_message_is_displayed(String)"
 });
 formatter.result({
   "status": "passed"

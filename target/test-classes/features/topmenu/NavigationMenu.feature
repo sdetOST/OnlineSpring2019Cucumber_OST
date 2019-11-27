@@ -16,7 +16,3 @@ Feature: Navigation menu options
   Scenario: Login as driver and navigate to the Vehicle Odometer
     Then user navigates to "Fleet" and "Vehicle Odometer"
     And user verifies that "Vehicles Odometers" page name is displayed
-
-  Scenario: Login as driver and navigate to the Vehicle Odometer
-    Then user navigates to "Fleet" and "Vehicles Model"
-    And user verifies that "All Vehicles Model" page name is displayed

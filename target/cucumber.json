@@ -3,31 +3,10 @@
     "line": 2,
     "elements": [
       {
-        "line": 5,
-        "name": "",
-        "description": "",
-        "type": "background",
-        "keyword": "Background",
-        "steps": [
-          {
-            "result": {
-              "duration": 1381202993,
-              "status": "passed"
-            },
-            "line": 6,
-            "name": "user is on the landing page",
-            "match": {
-              "location": "LoginStepDefinitions.user_is_on_the_landing_page()"
-            },
-            "keyword": "Given "
-          }
-        ]
-      },
-      {
         "before": [
           {
             "result": {
-              "duration": 4338284321,
+              "duration": 13941726100,
               "status": "passed"
             },
             "match": {
@@ -35,14 +14,14 @@
             }
           }
         ],
-        "line": 10,
+        "line": 11,
         "name": "Login as a store manager",
         "description": "",
         "id": "login;login-as-a-store-manager",
         "after": [
           {
             "result": {
-              "duration": 101927987,
+              "duration": 982302900,
               "status": "passed"
             },
             "match": {
@@ -55,10 +34,10 @@
         "steps": [
           {
             "result": {
-              "duration": 2687376326,
+              "duration": 5632721900,
               "status": "passed"
             },
-            "line": 11,
+            "line": 12,
             "name": "user logs in as a store manager",
             "match": {
               "location": "LoginStepDefinitions.user_logs_in_as_a_store_manager()"
@@ -67,10 +46,10 @@
           },
           {
             "result": {
-              "duration": 20555272976,
+              "duration": 3965834100,
               "status": "passed"
             },
-            "line": 12,
+            "line": 13,
             "name": "user verifies that \"Dashboard\" page name is displayed",
             "match": {
               "arguments": [
@@ -92,13 +71,93 @@
             "name": "@storemanager"
           }
         ]
+      },
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 11723691200,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hook.setup(Scenario)"
+            }
+          }
+        ],
+        "line": 16,
+        "name": "Verify warning message for invalid credentials",
+        "description": "",
+        "id": "login;verify-warning-message-for-invalid-credentials",
+        "after": [
+          {
+            "result": {
+              "duration": 872315400,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hook.teardown(Scenario)"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 1514465300,
+              "status": "passed"
+            },
+            "line": 17,
+            "name": "user logs in with \"wrong\" username and \"wrong\" password",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"wrong\"",
+                  "offset": 18
+                },
+                {
+                  "val": "\"wrong\"",
+                  "offset": 39
+                }
+              ],
+              "location": "LoginStepDefinitions.user_logs_in_with_username_and_password(String,String)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 72168200,
+              "status": "passed"
+            },
+            "line": 18,
+            "name": "user verifies that \"Invalid user name or password.\" warning message is displayed",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Invalid user name or password.\"",
+                  "offset": 19
+                }
+              ],
+              "location": "LoginStepDefinitions.user_verifies_that_warning_message_is_displayed(String)"
+            },
+            "keyword": "And "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@VYT-4121"
+          },
+          {
+            "name": "@negative"
+          }
+        ]
       }
     ],
     "name": "Login",
     "description": "  As user I want to login under different roles",
     "id": "login",
     "keyword": "Feature",
-    "uri": "src/test/resources/features/login/Login.feature",
+    "uri": "src\\test\\resources\\features\\login\\Login.feature",
     "tags": [
       {
         "name": "@VYT-4121",
